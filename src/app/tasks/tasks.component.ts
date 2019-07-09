@@ -13,6 +13,13 @@ export class TasksComponent implements OnInit {
   constructor(private _httpService:HttpService) { }
 
   ngOnInit() {
+    this.getTasks();
   }
 
+  getTasks(){
+    let obs = this._httpService.serviceGetTasks();
+    obs.subscribe(data => {
+      console.log("Got all tasks" + data);
+    })
+  }
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpService } from "./http.service";
 import { HttpClientModule } from "@angular/common/http";
 
+import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +25,7 @@ import { TasksComponent } from './tasks/tasks.component';
     MatPaginatorModule,
     MatSortModule,
     HttpClientModule,
+    MaterialModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
