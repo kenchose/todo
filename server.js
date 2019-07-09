@@ -17,4 +17,4 @@ app.all("*", (req, res, next) => {
     res.sendFile(path.resolve("./dist/todo/index.html"));
 })
 
-app.listen(7000, () => console.log("Listening on port 7000"));
+app.listen(8000, () => console.log("Listening on port 8000"));

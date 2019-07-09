@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { TasksComponent } from './tasks/tasks.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TasksComponent } from './tasks/tasks.component';
     MatSortModule,
     HttpClientModule,
     MaterialModule,
+    FormsModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

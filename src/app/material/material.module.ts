@@ -5,7 +5,8 @@ import {
 } from '@angular/material';
 
 const material = [
-  MatButtonModule
+  MatButtonModule,
+  MatBadgeModule,
 ]
 @NgModule({
   declarations: [],
