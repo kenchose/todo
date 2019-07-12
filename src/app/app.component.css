@@ -1,0 +1,47 @@
+mat-sidenav-container {
+  min-height: 100%;
+}
+
+mat-sidenav, mat-sidenav-content {
+  padding: 1rem;
+}
+
+mat-sidenav {
+  background-color: #F8F8F8;
+  width: 200px;
+}
+
+mat-sidenav #side-toggle-btn {
+  padding: 0;
+  border: none;
+  background-color: #F8F8F8;
+}
+
+mat-sidenav ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+mat-sidenav ul li {
+  margin-bottom: 15px;
+}
+
+.side-nav-link a {
+  text-decoration: none;
+}
+
+.side-nav-link a .nav-text {
+  color: #000000;
+  font-size: 18px;
+}
+
+.side-nav-link .material-icons {
+  font-size: 24px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+.mat-drawer-shown.mat-drawer-shown {
+  background-color: white !important;
+}
+/*# sourceMappingURL=app.component.css.map */

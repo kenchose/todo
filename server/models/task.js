@@ -13,13 +13,8 @@ let TaskSchema = new mongoose.Schema({
     dueDate:{
         type:Date
     },
-    complete:{
-        type:Boolean,
-        default:false
-    },
-    important:{
-        type:Number,
-        default:1
+    category:{
+        type:String
     }
 }, {timestamps:{createdAt:"created_at"}});
 

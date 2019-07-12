@@ -7,16 +7,18 @@ import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
-import { TasksComponent } from './tasks/tasks.component';
-import { FormsModule } from '@angular/forms';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { TasksComponent } from './components/tasks/tasks.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
-    TasksComponent
+    TasksComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,10 @@ import { FormsModule } from '@angular/forms';
     MatSortModule,
     HttpClientModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

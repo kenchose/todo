@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const mongooseDatabase = require('./server/config/mongoose');
 
 app.use(express.static(__dirname + "/dist/todo"));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:true }));
 
 mongoose.connect(mongooseDatabase.database, { useCreateIndex:true, useNewUrlParser:true} );
 mongoose.connection.on("connected", () => console.log("Connected on database " + mongooseDatabase.database));

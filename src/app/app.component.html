@@ -1,4 +1,27 @@
-<app-tasks>
-  <app-todo-list></app-todo-list>
-</app-tasks>
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+    <mat-sidenav #sideNav mode="slide" opened>
+        <button id="side-toggle-btn" (click)="sideNav.toggle()"><i class="material-icons">clear</i></button>
+        <ul>
+            <li class="side-nav-link">
+                <a routerLink="['/myday']" >
+                    <i class="material-icons">local_cafe</i><span class="nav-text">My Day</span>
+                </a>
+            </li>
+            <li class="side-nav-link">
+                <a routerLink="['/important']'">
+                    <i class="material-icons">star_border</i><span class="nav-text">Important</span> 
+                </a>
+            </li>
+            <li class="side-nav-link">
+                <a routerLink="['/tasks']'">
+                    <i class="material-icons">list_alt</i><span class="nav-text">Tasks</span>
+                </a>
+            </li>
+        </ul>
+    </mat-sidenav>
+<mat-sidenav-content>
+    <button (click)="sideNav.toggle()"><i class="material-icons">view_headline</i></button>
+    <app-tasks></app-tasks>
+</mat-sidenav-content>
+</mat-sidenav-container>
+<router-outlet></router-outlet> 
