@@ -1,0 +1,25 @@
+<form [formGroup]="myForm">
+    Value: {{myForm.value | json}}
+    <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field> 
+        <input matInput [matDatepicker]="myDatePicker" [min]="minDate" formControlName="dueDate" placeholder="Due Date">
+        <mat-datepicker-toggle matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field  color="warn">
+        <mat-label>Category</mat-label>
+        <mat-select [(value)]="selectedValue" multiple>
+            <mat-option value="my day">My Day</mat-option>
+            <mat-option value="important">Important</mat-option>
+            <mat-option value="task">Task</mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
