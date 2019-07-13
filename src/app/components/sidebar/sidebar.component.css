@@ -1,0 +1,41 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 15px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 20px;
+  display: block;
+  text-align: center;
+}
+
+ul li .activated {
+  background-color: #FB8C00;
+}
+
+.material-icons {
+  font-size: 24px;
+  color: #FB8C00;
+  display: block;
+  margin-bottom: 8px;
+}
+
+nav {
+  background-color: #2d2e2e;
+  height: 100%;
+  width: 120px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=sidebar.component.css.map */

@@ -6,7 +6,8 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
 }
 
 mat-radio-button {

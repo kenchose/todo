@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Raleway:600&display=swap');
 
 html, body { 
     height: 100%; 
@@ -8,6 +9,6 @@ body {
     margin: 0; 
     padding:0;
     box-sizing: border-box;
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-color:#f2f2f2;
+    font-family: 'Raleway', sans-serif;
+    background-color:#fff;
 }
