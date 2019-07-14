@@ -1,0 +1,16 @@
+.example-fill-remaining-space {
+/* This fills the remaining space, by using flexbox. 
+    Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    margin:0 auto;
+    border:1px solid blue;
+}
+mat-radio-button {
+    margin-right:16px;
+}

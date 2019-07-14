@@ -13,7 +13,7 @@ let TaskSchema = new mongoose.Schema({
     dueDate:{
         type:Date
     },
-    category:{
+    priorityLevel:{
         type:String
     }
 }, {timestamps:{createdAt:"created_at"}});

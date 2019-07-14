@@ -1,7 +1,7 @@
 const task = require('./../controllers/tasks');
 
 module.exports = (app) => {
-    app.get('/tasks', (req, res) => {
-        task.all(req, res)
+    app.post('/tasks', (req, res) => {
+        task.new(req, res)
     })
 }

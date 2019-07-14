@@ -1,0 +1,83 @@
+<mat-toolbar color="primary">
+    <span>Application Title</span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <span>Right Aligned Text</span>
+</mat-toolbar>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    Value: {{myForm.value | json}}
+    <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title">
+    </mat-form-field>
+    <mat-error *ngIf="title.invalid && title.touched">
+        Task must have a title
+    </mat-error>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Note" formControlName="note"></textarea>
+    </mat-form-field>
+
+    <mat-form-field> 
+        <input matInput [matDatepicker]="myDatePicker" [min]="minDate" formControlName="dueDate" placeholder="Due Date">
+        <mat-datepicker-toggle matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #myDatePicker></mat-datepicker>
+    </mat-form-field>
+    <mat-error *ngIf="dueDate.dirty && dueDate.invalid">
+        Don't forget the due date
+    </mat-error>
+    <mat-error *ngIf="myForm.controls['dueDate'].hasError('matDatepickerMin')">
+        Date has already past
+    </mat-error>
+    
+    <mat-form-field  color="warn">
+        <mat-label>Category</mat-label>
+        <mat-select  formControlName="priorityLevel" multiple>
+            <mat-option value="myDay">My Day</mat-option>
+            <mat-option value="important">Important</mat-option>
+            <mat-option [(value)]="selectedValue" value="task">Task</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button [disabled]="myForm.invalid" color="warn">Create new task</button>
+</form>
+
+<!-- <form (submit)='componentCreate()' #formData='ngForm'>
+        <p>First name:{{title.errors | json }} Valid? {{title.valid | json}}</p>
+
+    Value: {{formData.value | json}}
+    <mat-form-field [hideRequiredMarker]="hideRequired">
+        <input matInput placeholder="Title" [(ngModel)]='newTask.title' name='newTask.title' #title="ngModel" required>
+    </mat-form-field>
+    <mat-error *ngIf="title.invalid && title.touched">
+        New task needs a title
+    </mat-error>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Note" [(ngModel)]="newTask.note" name="newTask.note"></textarea>
+    </mat-form-field>
+
+    <mat-form-field [hideRequiredMarker]="hideRequired"> 
+        <input matInput [matDatepicker]="myDatePicker" [min]="minDate" [(ngModel)]="newTask.dueDate" name="newTask.dueDate" placeholder="Due Date" #dueDate="ngModel" required>
+        <mat-datepicker-toggle  matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #myDatePicker></mat-datepicker>
+    </mat-form-field>
+    <mat-error *ngIf="dueDate.invalid && dueDate.touched">
+        Make sure you don't forget when it's due
+    </mat-error>
+    
+          
+    <mat-form-field  color="warn">
+        <mat-label>Category</mat-label>
+        <mat-select  [(ngModel)]="newTask.importance" name="newTask.importance" multiple>
+            <mat-option value="myDay">My Day</mat-option>
+            <mat-option value="important">Important</mat-option>
+            <mat-option [(value)]="selectedValue" value="task">Task</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button [disabled]="formData.invalid" color="warn">Create new task</button>
+</form> -->
+

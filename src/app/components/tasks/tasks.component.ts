@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../http.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+// import { FormControl } from '@angular/forms';
 
 
 
@@ -26,13 +26,13 @@ export class TasksComponent implements OnInit {
       importance:''
     })
     this.myForm.valueChanges.subscribe(console.log)
-    this.getTasks();
+    // this.getTasks();
   }
 
-  getTasks(){
-    let obs = this._httpService.serviceGetTasks();
-    obs.subscribe(data => {
-      console.log("Got all tasks" + data);
-    })
-  }
+  // getTasks(){
+  //   let obs = this._httpService.serviceGetTasks();
+  //   obs.subscribe(data => {
+  //     console.log("Got all tasks" + data);
+  //   })
+  // }
 }

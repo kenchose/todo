@@ -13,6 +13,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './components/nav/nav.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MyDayComponent } from './components/my-day/my-day.component';
+import { NewTaskComponent } from './components/new-task/new-task.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     TodoListComponent,
     TasksComponent,
     NavComponent,
-    SidebarComponent
+    SidebarComponent,
+    MyDayComponent,
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,
