@@ -1,0 +1,32 @@
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+        Every toolbar row uses a flexbox row layout. */
+        flex: 1 1 auto;
+    }
+    
+    form {
+        // display: flex;
+        flex-direction: column;
+        width:50%;
+        margin:1rem auto;
+    }
+    
+    mat-form-field {
+        width:100%;
+        padding:0;
+    }
+    
+    mat-card {
+        margin:3rem auto;
+        width:80%;
+    }
+    
+    button {
+        justify-content: right;
+        margin-left:10px;
+        display:inline-flex;
+    }
+    
+    .action-btn {
+        text-align: right;
+    }

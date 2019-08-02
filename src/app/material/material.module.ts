@@ -9,7 +9,18 @@ import {
   MatRadioModule,
   MatSelectModule,
   MatToolbarModule,
-  MatGridListModule
+  MatGridListModule,
+  MatProgressSpinnerModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatInputModule,
+  MatSortModule,
+  MatIconModule,
+  MatExpansionModule,
+  MatCardModule,
+  MatMenuModule, 
+  MatListModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 const material = [
@@ -19,10 +30,21 @@ const material = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatFormFieldModule,
-  MatRadioModule,
+  MatRadioModule, 
   MatSelectModule,
   MatToolbarModule,
   MatGridListModule,
+  MatProgressSpinnerModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatInputModule,
+  MatSortModule, 
+  MatIconModule,
+  MatExpansionModule,
+  MatCardModule, 
+  MatMenuModule, 
+  MatListModule,
+  MatCheckboxModule
 ]
 @NgModule({
   declarations: [],

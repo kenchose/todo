@@ -5,16 +5,16 @@ let TaskSchema = new mongoose.Schema({
         type:String,
         required:[true, "Must have a title for the task."]
     },
-    description:{
+    note:{
         type:String,
         min:[5, "Must be at least 5 characters."],
-        required:[true, "Description is required field."]
+        required:[true, "Note is required field."]
     },
     dueDate:{
-        type:Date
-    },
-    priorityLevel:{
         type:String
+    },
+    priLevel:{
+        type:Array,
     }
 }, {timestamps:{createdAt:"created_at"}});
 

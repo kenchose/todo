@@ -6,19 +6,29 @@
           flex: 1 1 auto;
 }
 
-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 50%;
-  margin: 0 auto;
+h1 {
+  font-size: 24px !important;
 }
 
 mat-radio-button {
   margin-right: 16px;
+}
+
+mat-list {
+  height: 100%;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#fddb92), to(#d1fdff));
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}
+
+mat-list-item {
+  padding: 0.8rem !important;
+}
+
+mat-list-item mat-divider {
+  margin-bottom: -20px !important;
+}
+
+#text-title {
+  margin-bottom: 10px !important;
 }
 /*# sourceMappingURL=my-day.component.css.map */

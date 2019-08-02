@@ -1,36 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './../../http.service';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-my-day',
+  selector: 'my-day',
   templateUrl: './my-day.component.html',
   styleUrls: ['./my-day.component.scss']
 })
 export class MyDayComponent implements OnInit {
 
-  myForm:FormGroup;
-  myControl = new FormControl();
-  tasks:String[];
+  dayTasks:Object[] = [];
   minDate = new Date();
-  constructor(private _httpService:HttpService, private _fb:FormBuilder) { }
+
+  constructor(private _httpService:HttpService) { }
 
   ngOnInit() {
-    this.myForm = this._fb.group({
-      title:'',
-      description:'',
-      dueDate:'',
-      importance:''
-    })
-    this.myForm.valueChanges.subscribe(console.log);
-    // this.getDayTask();
-
+    this.myDayTasks();
   }
 
-  // getDayTask(){
-  //   let obs = this._httpService.serviceMyDay();
-  //   obs.subscribe(data => {
-  //     console.log(data);
-  //   })
-  // }
+  myDayTasks(){
+    this._httpService.getDayTasks()
+    .subscribe(data => {
+      this.dayTasks = data['dayTasks'];
+    })
+  }
+
+  getDayTask(myDay){
+    return this._httpService.oneMyDay(myDay);
+  }
 }

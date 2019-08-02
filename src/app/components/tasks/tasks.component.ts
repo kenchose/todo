@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../http.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-// import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 
 
@@ -11,28 +12,33 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
   styleUrls: ['./tasks.component.scss']
 })
 export class TasksComponent implements OnInit {
-  myForm:FormGroup;
-  myControl = new FormControl()
-  tasks:String[];
-  minDate = new Date();
-  constructor(private _httpService:HttpService, private _fb:FormBuilder) { }
 
+  tasks:Object[] = [];
+  checked = false;
+  anyTask:any
+  editTask:any
+  editing:boolean;
+  constructor(
+    private _httpService:HttpService,
+    private _router:Router,
+    private _route:ActivatedRoute
+    ) { this.editing=false}
   ngOnInit() {
-    this.myForm = this._fb.group({
-      title:'',
-      description:'',
-      dueDate:'',
-      complete:false,
-      importance:''
-    })
-    this.myForm.valueChanges.subscribe(console.log)
-    // this.getTasks();
+    this.getTasks();
   }
 
-  // getTasks(){
-  //   let obs = this._httpService.serviceGetTasks();
-  //   obs.subscribe(data => {
-  //     console.log("Got all tasks" + data);
-  //   })
-  // }
+  getTasks(){
+    this._httpService.getAllTasks()
+      .subscribe(data => {
+        console.log(data);
+        this.tasks = data['tasks']
+      })
+  }
+
+  removeTask(id){
+    this._httpService.deleteTask(id)
+    .subscribe(data => {
+      this.getTasks();
+    })
+  }
 }

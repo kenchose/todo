@@ -6,6 +6,10 @@
   height: 100%;
 }
 
+main {
+  margin: 1rem auto;
+}
+
 mat-sidenav-container {
   min-height: 100%;
 }

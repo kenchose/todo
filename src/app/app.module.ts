@@ -7,38 +7,42 @@ import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TodoListComponent } from './components/todo-list/todo-list.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavComponent } from './components/nav/nav.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MyDayComponent } from './components/my-day/my-day.component';
 import { NewTaskComponent } from './components/new-task/new-task.component';
+import { TrialComponent } from './components/trial/trial.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ImportantComponent } from './components/important/important.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent,
     TasksComponent,
-    NavComponent,
     SidebarComponent,
     MyDayComponent,
-    NewTaskComponent
+    NewTaskComponent,
+    TrialComponent,
+    ToolbarComponent,
+    ImportantComponent,
+    NavbarComponent,
+    NotfoundComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
     HttpClientModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule
+    LayoutModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
