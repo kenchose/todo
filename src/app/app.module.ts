@@ -12,7 +12,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MyDayComponent } from './components/my-day/my-day.component';
 import { NewTaskComponent } from './components/new-task/new-task.component';
-import { TrialComponent } from './components/trial/trial.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ImportantComponent } from './components/important/important.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -27,7 +26,6 @@ import { EditComponent } from './components/edit/edit.component';
     SidebarComponent,
     MyDayComponent,
     NewTaskComponent,
-    TrialComponent,
     ToolbarComponent,
     ImportantComponent,
     NavbarComponent,
