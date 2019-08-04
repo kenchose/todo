@@ -48,4 +48,16 @@ export class HttpService {
   deleteTask(id: Number) {
     return this._http.delete("/tasks/delete/" + id);
   }
+
+  getImportCount(){
+    return this._http.get("/tasks/count/important");
+  }
+
+  getMyDayCount(){
+    return this._http.get("/tasks/count/myday");
+  }
+
+  getTaskCount(){
+    return this._http.get("/tasks/count/tasks");
+  }
 }

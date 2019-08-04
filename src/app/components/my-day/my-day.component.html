@@ -1,5 +1,5 @@
 <mat-list>
-    <mat-list-item *ngFor="let task of dayTasks">
+    <mat-list-item *ngFor="let task of dayTasks" [ngClass]="{'list-item':true}">
         <mat-checkbox matListIcon></mat-checkbox>
         <h1 id="text-title" matLine > {{task.title}} </h1>
         <p class="task-detail" matLine>Due Date:

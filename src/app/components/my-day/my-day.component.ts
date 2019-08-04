@@ -8,10 +8,12 @@ import { HttpService } from './../../http.service';
 })
 export class MyDayComponent implements OnInit {
 
-  dayTasks:Object[] = [];
-  minDate = new Date();
-
-  constructor(private _httpService:HttpService) { }
+  dayTasks:Object[]=[];
+  minDate = new Date().toISOString().slice(0,10);
+  dayCheck:any
+  constructor(private _httpService:HttpService) { 
+    // this.dayTasks = {title:'', note:'', dueDate:'', priLevel:''}
+  }
 
   ngOnInit() {
     this.myDayTasks();
@@ -21,6 +23,7 @@ export class MyDayComponent implements OnInit {
     this._httpService.getDayTasks()
     .subscribe(data => {
       this.dayTasks = data['dayTasks'];
+      console.log(this.minDate)
     })
   }
 

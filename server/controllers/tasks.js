@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Task = mongoose.model("Task");
-let today = new Date()
-console.log(today)
 module.exports = {
   new: (req, res) => {
     let newTask = new Task(req.body);
@@ -25,11 +23,16 @@ module.exports = {
   },
 
   myDay: (req, res) => {
+    // let today = new Date().toISOString().slice(0,10) formats date readable
     Task.find({priLevel:['myDay']}, (err, dayTasks) => {
       if (err) {
         res.json({error: "Error, couldn't find current day todo tasks", err});
       } else {
-        res.json({success: "Found todays todo schedule", dayTasks});
+        let now = new Date();
+        let dayCheck = now.getDate();
+        let monthCheck = now.getMonth();
+        let yearCheck = now.getFullYear();
+        res.json({success: "Found todays todo schedule", dayTasks, dayCheck, monthCheck, yearCheck});
       }
     })
   },
@@ -69,7 +72,7 @@ module.exports = {
 
   oneTask: (req, res) => {
     id = req.params.id
-    Task.findOne({_id: id}, (err, task) => { //findOne if the data you get back is in an array. Remember to always console.log or typeOf
+    Task.findOne({_id: id}, (err, task) => {
         if(err) {
             res.json({error: "Error, error finding single task", err});
         } else {
@@ -96,6 +99,36 @@ module.exports = {
         res.json({error: "Error, could not delete task", err});
       } else {
         res.json({success:"Successfully deleted", task});
+      }
+    })
+  },
+
+  countImportant: (req, res) => {
+    Task.find({priLevel:'important'}).countDocuments((err, count) => {
+      if (err) {
+        res.json({error: "Error, could not count important task", err});
+      } else {
+        res.json(count)
+      }
+    })
+  },
+
+  countMyDay: (req, res) => {
+    Task.find({priLevel:"myDay"}).countDocuments((err, count) => {
+      if(err) {
+        res.json({error: "Error, could not count my days"});
+      } else {
+        res.json(count);
+      }
+    })
+  },
+
+  countTask: (req, res) => {
+    Task.find({}).countDocuments((err, count) => {
+      if(err) {
+        res.json({error: "Error, could not get count tasks", err});
+      } else {
+        res.json(count);
       }
     })
   }

@@ -4,29 +4,34 @@
         flex: 1 1 auto;
     }
     
-    form {
-        // display: flex;
-        flex-direction: column;
-        width:50%;
-        margin:1rem auto;
-    }
-    
-    mat-form-field {
-        width:100%;
-        padding:0;
-    }
-    
-    mat-card {
-        margin:3rem auto;
-        width:80%;
-    }
-    
-    button {
-        justify-content: right;
-        margin-left:10px;
-        display:inline-flex;
-    }
-    
-    .action-btn {
-        text-align: right;
-    }
+form {
+    // display: flex;
+    flex-direction: column;
+    width:50%;
+    margin:1rem auto;
+}
+
+mat-form-field {
+    width:100%;
+    padding:0;
+}
+
+mat-card {
+    margin:3rem auto;
+    width:80%;
+}
+
+button {
+    justify-content: right;
+    margin-left:10px;
+    display:inline-flex;
+}
+
+.action-btn {
+    text-align: right;
+}
+
+.container {
+    height:100%;
+    background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+}

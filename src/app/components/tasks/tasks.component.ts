@@ -18,6 +18,10 @@ export class TasksComponent implements OnInit {
   anyTask:any
   editTask:any
   editing:boolean;
+  countImport:any;
+  countMyDay:any;
+  countTasks:any
+
   constructor(
     private _httpService:HttpService,
     private _router:Router,
@@ -25,20 +29,34 @@ export class TasksComponent implements OnInit {
     ) { this.editing=false}
   ngOnInit() {
     this.getTasks();
+    this.getCountImportant();
+    this.getCountMyDay();
+    this.getCountTasks();
   }
 
   getTasks(){
     this._httpService.getAllTasks()
-      .subscribe(data => {
-        console.log(data);
-        this.tasks = data['tasks']
-      })
+    .subscribe(data => this.tasks = data['tasks'])
   }
+
+  getCountImportant(){
+    this._httpService.getImportCount()
+    .subscribe(count => this.countImport = count)
+  }
+
+  getCountMyDay(){
+    this._httpService.getMyDayCount()
+    .subscribe(count => this.countMyDay = count)
+  }
+
+  getCountTasks(){
+    this._httpService.getTaskCount()
+    .subscribe(count => this.countTasks = count)
+  }
+
 
   removeTask(id){
     this._httpService.deleteTask(id)
-    .subscribe(data => {
-      this.getTasks();
-    })
+    .subscribe(data => this.getTasks())
   }
 }

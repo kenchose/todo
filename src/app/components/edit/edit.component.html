@@ -1,40 +1,42 @@
-<mat-card>
-  <form (submit)='taskEdit(formData)' #formData='ngForm'>
-      <mat-form-field [hideRequiredMarker]="hideRequired">
-          <input matInput placeholder="Title" [(ngModel)]='editTask.title' name='editTask.title' #title="ngModel" required>
-      </mat-form-field>
-      <mat-error *ngIf="title.invalid && title.touched">
-          Please enter a taslk title
-      </mat-error>
+<div class="container">
+    <mat-card>
+    <form (submit)='taskEdit(formData)' #formData='ngForm'>
+        <mat-form-field [hideRequiredMarker]="hideRequired">
+            <input matInput placeholder="Title" [(ngModel)]='editTask.title' name='editTask.title' #title="ngModel" required>
+        </mat-form-field>
+        <mat-error *ngIf="title.invalid && title.touched">
+            Please enter a taslk title
+        </mat-error>
 
-      <mat-form-field>
-          <textarea matInput placeholder="Note" [(ngModel)]="editTask.note" name="editTask.note"></textarea>
-      </mat-form-field>
-      
-      <mat-form-field [hideRequiredMarker]="hideRequired"> 
-          <input matInput [matDatepicker]="myDatePicker" [min]="minDate" [(ngModel)]="editTask.dueDate" name="editTask.dueDate" placeholder="Due Date" #dueDate="ngModel" required>
-          <mat-datepicker-toggle  matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
-          <mat-datepicker touchUi #myDatePicker></mat-datepicker>
-      </mat-form-field>
-      <mat-error *ngIf="dueDate.invalid && dueDate.touched">
-          Please enter a due date
-      </mat-error>
-      
-      
-      <mat-form-field  color="warn" [hideRequiredMarker]="hideRequired">
-          <mat-label>Category</mat-label>
-          <mat-select [(ngModel)]="editTask.priLevel" name="editTask.priLevel" multiple required>
-              <mat-option value="myDay"> My Day</mat-option>
-              <mat-option value="important"> Important</mat-option>
-              <mat-option value="task"> Task</mat-option>
-          </mat-select>
-      </mat-form-field>
-      <mat-error *ngIf="dueDate.invalid && dueDate.touched">
-          Please choose a category
-      </mat-error>
-      <div class="action-btn">
-          <button mat-raised-button color="primary" [disabled]="formData.invalid">Edit task</button>
-          <button mat-raised-button type="reset" color="warn" [routerLink]="['/alltasks']">Cancel</button>
-      </div>
-  </form>
-</mat-card>
+        <mat-form-field>
+            <textarea matInput placeholder="Note" [(ngModel)]="editTask.note" name="editTask.note"></textarea>
+        </mat-form-field>
+        
+        <mat-form-field [hideRequiredMarker]="hideRequired"> 
+            <input matInput [matDatepicker]="myDatePicker" [min]="minDate" [(ngModel)]="editTask.dueDate" name="editTask.dueDate" placeholder="Due Date" #dueDate="ngModel" required>
+            <mat-datepicker-toggle  matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #myDatePicker></mat-datepicker>
+        </mat-form-field>
+        <mat-error *ngIf="dueDate.invalid && dueDate.touched">
+            Please enter a due date
+        </mat-error>
+        
+        
+        <mat-form-field  color="warn" [hideRequiredMarker]="hideRequired">
+            <mat-label>Category</mat-label>
+            <mat-select [(ngModel)]="editTask.priLevel" name="editTask.priLevel" multiple required>
+                <mat-option value="myDay"> My Day</mat-option>
+                <mat-option value="important"> Important</mat-option>
+                <mat-option value="task"> Task</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-error *ngIf="dueDate.invalid && dueDate.touched">
+            Please choose a category
+        </mat-error>
+        <div class="action-btn">
+            <button mat-raised-button color="primary" [disabled]="formData.invalid">Edit task</button>
+            <button mat-raised-button type="reset" color="warn" [routerLink]="['/alltasks']">Cancel</button>
+        </div>
+    </form>
+    </mat-card>
+</div>

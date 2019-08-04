@@ -15,6 +15,7 @@ mat-radio-button {
 }
 
 mat-list {
+  padding: 0px;
   height: 100%;
   background-image: -webkit-gradient(linear, left bottom, left top, from(#fddb92), to(#d1fdff));
   background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);

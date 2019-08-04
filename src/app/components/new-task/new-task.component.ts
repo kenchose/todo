@@ -13,15 +13,18 @@ export class NewTaskComponent implements OnInit {
   minDate = new Date();
   hideRequired="true"
   newTask:any
+  selectedOption:any;
 
   constructor(
     private _httpService:HttpService,
     private _router:Router
     ) { 
-    this.newTask = {title:'', note:'', dueDate:'', priLevel:''}
+    this.selectedOption="task"
+    this.newTask = {title:'', note:'', dueDate:'', priLevel:this.selectedOption}
   }
 
   ngOnInit() {
+    this.selectedOption="task"
   }
 
   createNewTask(){

@@ -37,4 +37,12 @@ module.exports = (app) => {
     app.delete('/tasks/delete/:id', (req, res) => {
         task.deleteTask(req, res);
     })
+
+    app.get("/tasks/count/important", (req, res) => {
+        task.countImportant(req, res);
+    })
+
+    app.get("/tasks/count/myday", (req, res) => task.countMyDay(req, res));
+
+    app.get("/tasks/count/tasks", (req, res) => task.countTask(req, res));
 }
