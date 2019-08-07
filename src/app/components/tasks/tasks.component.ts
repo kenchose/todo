@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpService } from '../../http.service';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
 
 
 
@@ -14,13 +13,13 @@ import { Observable } from 'rxjs';
 export class TasksComponent implements OnInit {
 
   tasks:Object[] = [];
-  checked = false;
   anyTask:any
   editTask:any
   editing:boolean;
   countImport:any;
   countMyDay:any;
-  countTasks:any
+  countTasks:any;
+  thisNewTask:boolean
 
   constructor(
     private _httpService:HttpService,
@@ -28,35 +27,32 @@ export class TasksComponent implements OnInit {
     private _route:ActivatedRoute
     ) { this.editing=false}
   ngOnInit() {
+    this._httpService.refreshCount$.subscribe(() => {
+      this.getCountTasks();
+      this.getCountImportant();
+      this.getCountMyDay();  
+    })
     this.getTasks();
-    this.getCountImportant();
-    this.getCountMyDay();
-    this.getCountTasks();
+  }
+  
+  getTasks(){
+    this._httpService.getAllTasks().subscribe(data => this.tasks = data['tasks']);
   }
 
-  getTasks(){
-    this._httpService.getAllTasks()
-    .subscribe(data => this.tasks = data['tasks'])
-  }
 
   getCountImportant(){
-    this._httpService.getImportCount()
-    .subscribe(count => this.countImport = count)
+    this._httpService.getImportCount().subscribe(count => this.countImport = count);
   }
 
   getCountMyDay(){
-    this._httpService.getMyDayCount()
-    .subscribe(count => this.countMyDay = count)
+    this._httpService.getMyDayCount().subscribe(count => this.countMyDay = count);
   }
 
   getCountTasks(){
-    this._httpService.getTaskCount()
-    .subscribe(count => this.countTasks = count)
+    this._httpService.getTaskCount().subscribe(count => this.countTasks = count);
   }
 
-
   removeTask(id){
-    this._httpService.deleteTask(id)
-    .subscribe(data => this.getTasks())
+    this._httpService.deleteTask(id).subscribe(() => this.getTasks());
   }
 }

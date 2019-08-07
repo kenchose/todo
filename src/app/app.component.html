@@ -1,6 +1,7 @@
 <div id="container">
-    <sidebar></sidebar>
+    <app-sidebar #main></app-sidebar>
+    <!-- <app-sidebar (toCount)="numberOfTasks()"></app-sidebar> -->
     <div id="main">
-        <router-outlet></router-outlet> 
+        <router-outlet (click)="main.getCountTasks($event)"></router-outlet> 
     </div>
 </div>

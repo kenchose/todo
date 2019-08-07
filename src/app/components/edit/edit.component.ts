@@ -27,23 +27,20 @@ export class EditComponent implements OnInit {
       this.getOneTask();
     }
     
-    getOneTask(){
-      this._route.params.subscribe((params:Params) => {
-        this._httpService.oneTask(params['id'])
-        .subscribe(data => {
-          this.editTask = data
-        })
-      })
-    }
-
-    resetForm(form:NgForm){
-      form.resetForm();
-    }
-
-    taskEdit(){
-      this._httpService.editTask(this.editTask)
+  getOneTask(){
+    this._route.params.subscribe((params:Params) => {
+      this._httpService.oneTask(params['id'])
       .subscribe(data => {
-        this._router.navigate(['/alltasks'])
+        this.editTask = data
       })
-    }
+    })
+  }
+
+  resetForm(form:NgForm){
+    form.resetForm();
+  }
+
+  taskEdit(){
+    this._httpService.editTask(this.editTask).subscribe(data => this._router.navigate(['/alltasks']))
+  }
 }

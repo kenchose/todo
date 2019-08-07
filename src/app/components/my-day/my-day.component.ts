@@ -10,24 +10,37 @@ export class MyDayComponent implements OnInit {
 
   dayTasks:Object[]=[];
   minDate = new Date().toISOString().slice(0,10);
-  dayCheck:any
+  countTasks:any;
+  countMyDay:any;
+
   constructor(private _httpService:HttpService) { 
-    // this.dayTasks = {title:'', note:'', dueDate:'', priLevel:''}
   }
 
   ngOnInit() {
+    this._httpService.refreshCount$.subscribe(() => {
+      this.getCountTasks();
+      this.getCountMyDay();  
+    })
     this.myDayTasks();
   }
 
   myDayTasks(){
-    this._httpService.getDayTasks()
-    .subscribe(data => {
-      this.dayTasks = data['dayTasks'];
-      console.log(this.minDate)
-    })
+    this._httpService.getDayTasks().subscribe(data => this.dayTasks = data['dayTasks']);
   }
 
   getDayTask(myDay){
     return this._httpService.oneMyDay(myDay);
+  }
+
+  removeTask(id) {
+    this._httpService.deleteTask(id).subscribe(() => this.myDayTasks());
+  }
+
+  getCountMyDay(){
+    let obs = this._httpService.getMyDayCount().subscribe(count => this.countMyDay = count);
+  }
+
+  getCountTasks(){
+    let obs = this._httpService.getTaskCount().subscribe(count => this.countTasks = count);
   }
 }

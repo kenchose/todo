@@ -4,7 +4,6 @@ ul {
     margin:0;
     li {
         margin-bottom:15px;
-
         a {
             text-decoration: none;
             color:#fff;
@@ -13,22 +12,27 @@ ul {
             text-align: center;
         }        
         .activated {
-            background-color:#FB8C00;
+            background-color:red;
         }
     }
 }
 
-.material-icons {
-    font-size:24px;
+mat-icon {
+    font-size:42px;
     color:#FB8C00;
     display:block;
-    margin-bottom:8px;
+    padding-left:16px;
+    width:34px;
+}
+
+.material-icon {
+    top:-4px;
 }
 
 nav {
     background-color:#2d2e2e;
     height:100%;
     width:120px;
-    display:flex
+    display:flex;
+    position: fixed;
 }
-

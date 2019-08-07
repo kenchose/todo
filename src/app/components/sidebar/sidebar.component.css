@@ -17,14 +17,19 @@ ul li a {
 }
 
 ul li .activated {
-  background-color: #FB8C00;
+  background-color: red;
 }
 
-.material-icons {
-  font-size: 24px;
+mat-icon {
+  font-size: 42px;
   color: #FB8C00;
   display: block;
-  margin-bottom: 8px;
+  padding-left: 16px;
+  width: 34px;
+}
+
+.material-icon {
+  top: -4px;
 }
 
 nav {
@@ -34,5 +39,6 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: fixed;
 }
 /*# sourceMappingURL=sidebar.component.css.map */

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from './../../http.service';
+import { HttpService } from '../../http.service';
 import { NgForm } from '@angular/forms'
 import { Router } from '@angular/router';
 
@@ -14,6 +14,11 @@ export class NewTaskComponent implements OnInit {
   hideRequired="true"
   newTask:any
   selectedOption:any;
+  tasks:Object[] = []
+  countImport:any;
+  countMyDay:any;
+  countTasks:any;
+  thisNewTask:boolean
 
   constructor(
     private _httpService:HttpService,
@@ -23,16 +28,31 @@ export class NewTaskComponent implements OnInit {
     this.newTask = {title:'', note:'', dueDate:'', priLevel:this.selectedOption}
   }
 
+
   ngOnInit() {
     this.selectedOption="task"
+    this.getTasks();
+  }
+
+  getTasks(){
+    this._httpService.getAllTasks().subscribe(data => this.tasks = data['tasks']);
   }
 
   createNewTask(){
-    this._httpService.createTask(this.newTask)
-      .subscribe(data => {
-        console.log(data);
-        this._router.navigate(['/alltasks'])
-    });
+    this._httpService.createTask(this.newTask).subscribe(data => this._router.navigate(['/task']));
+  }
+
+  
+  getCountImportant(){
+    this._httpService.getImportCount().subscribe(count => this.countImport = count);
+  }
+  
+  getCountMyDay(){
+    this._httpService.getMyDayCount().subscribe(count => this.countMyDay = count);
+  }
+  
+  getCountTasks(){
+    this._httpService.getTaskCount().subscribe(count => this.countTasks = count);
   }
 
   resetForm(form:NgForm){

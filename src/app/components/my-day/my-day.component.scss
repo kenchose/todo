@@ -8,22 +8,18 @@ h1 {
     font-size:24px !important;
 }
   
-mat-radio-button {
-    margin-right:16px;
-}
-
 mat-list {
     padding:0px;
     height:100%;
     background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
 }
 
-mat-list-item {
-    padding:0.8rem !important;
-    mat-divider {
-      margin-bottom:-20px !important;
-    }
-}
+// mat-list-item {
+//     // margin:0.8rem !important;
+//     mat-divider {
+//       margin-bottom:-20px !important;
+//     }
+// }
 
 #text-title {
     margin-bottom:10px !important;

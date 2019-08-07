@@ -1,23 +1,35 @@
 <nav>
     <ul>
         <li>
-            <a [routerLink]="['/create']">
-                <i class="material-icons">add</i>New Task
+            <a [routerLink]="['create']">
+                <p>
+                    <mat-icon id="add">add</mat-icon>
+                </p>
+                <span id="new-task">New Task</span>
             </a>
         </li>
         <li>
-            <a [routerLink]="['/myday']">
-                <i class="material-icons">local_cafe</i>My Day
+            <a [routerLink]="['myday']">
+                <p>
+                    <mat-icon id="local-cafe" class="material-icons" matBadge="{{countMyDay}}" matBadgeColor="warn">local_cafe</mat-icon>
+                </p>
+                <span>My Day {{user}}</span>
             </a>
         </li>
         <li>
-            <a [routerLink]="['/important']">
-                <i class="material-icons">star_border</i>Important
+            <a [routerLink]="['important']">
+                <p>
+                    <mat-icon id="star-border" class="material-icons" matBadge="{{countImport}}" matBadgeColor="warn">star_border</mat-icon>
+                </p>
+                <span class="import">Important</span>
             </a>
         </li>
         <li>
-            <a [routerLink]="['/alltasks']">
-                <i class="material-icons">list_alt</i>Tasks
+            <a [routerLink]="['task']">
+                <p>
+                    <mat-icon id="list-alt" class="material-icons" matBadge="{{countTasks}}" matBadgeColor="warn" matBadgeOverlap="true">list_alt</mat-icon>
+                </p>
+                <span>Tasks</span>
             </a>
         </li>
     </ul>

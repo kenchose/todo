@@ -1,5 +1,7 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Output, EventEmitter } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { BehaviorSubject, Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 // import { Observable } from 'rxjs';
 // import { Task } from './task.model'
 // import { TasksComponent } from './components/tasks/tasks.component';
@@ -9,16 +11,26 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root"
 })
 export class HttpService {
-  private serviceUrl = "http://localhost:8000/tasks";
+  private _refreshCount$ = new Subject<void>();
   // private serviceUrl = "https://jsonplaceholder.typicode.com/users"
+  private serviceUrl = "http://localhost:8000/tasks";
   constructor(private _http: HttpClient) {}
+  
+  get refreshCount$(){
+    return this._refreshCount$;
+  }
 
   getAllTasks() {
     return this._http.get(this.serviceUrl);
   }
 
   createTask(newTask: any) {
-    return this._http.post("/tasks/new", newTask);
+    return this._http.post("/tasks/new", newTask)
+    .pipe(
+      tap(() => {
+        this._refreshCount$.next()
+      })
+    )
   }
 
   getDayTasks() {
@@ -46,7 +58,12 @@ export class HttpService {
   }
 
   deleteTask(id: Number) {
-    return this._http.delete("/tasks/delete/" + id);
+    return this._http.delete("/tasks/delete/" + id)
+    .pipe(
+      tap(() => {
+        this._refreshCount$.next()
+      })
+    )
   }
 
   getImportCount(){

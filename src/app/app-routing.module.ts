@@ -12,10 +12,9 @@ const routes: Routes = [
   {path: 'create', component:NewTaskComponent}, 
   {path: 'myday', component:MyDayComponent},
   {path: 'important', component:ImportantComponent},
-  {path: 'alltasks', component:TasksComponent},
   {path: 'edit/:id', component:EditComponent},
   {path:"", pathMatch:"full", redirectTo:"/task"},
-  {path: "**", pathMatch:"full", component:NotfoundComponent},
+  {path: "**", pathMatch:"full", component:NotfoundComponent}
 ];
 
 @NgModule({
