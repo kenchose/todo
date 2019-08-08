@@ -41,6 +41,6 @@ export class EditComponent implements OnInit {
   }
 
   taskEdit(){
-    this._httpService.editTask(this.editTask).subscribe(data => this._router.navigate(['/alltasks']))
+    this._httpService.editTask(this.editTask).subscribe(data => this._router.navigate(['/task']))
   }
 }

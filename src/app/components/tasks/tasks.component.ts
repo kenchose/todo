@@ -20,6 +20,7 @@ export class TasksComponent implements OnInit {
   countMyDay:any;
   countTasks:any;
   thisNewTask:boolean
+  switch:boolean;
 
   constructor(
     private _httpService:HttpService,
@@ -35,10 +36,13 @@ export class TasksComponent implements OnInit {
     this.getTasks();
   }
   
-  getTasks(){
-    this._httpService.getAllTasks().subscribe(data => this.tasks = data['tasks']);
+  keepClass(event){
+    console.log(event)
+    // this._httpService.keepingClass.subscribe((event) => this.switch = event)
   }
-
+  getTasks(){
+    this._httpService.getAllTasks().subscribe(data => {this.tasks = data['tasks']; console.log(this.tasks.length)});
+  }
 
   getCountImportant(){
     this._httpService.getImportCount().subscribe(count => this.countImport = count);

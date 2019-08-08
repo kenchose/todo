@@ -17,7 +17,9 @@ ul li a {
 }
 
 ul li .activated {
-  background-color: red;
+  background-color: #696969;
+  width: 80px;
+  border-radius: 50%;
 }
 
 mat-icon {

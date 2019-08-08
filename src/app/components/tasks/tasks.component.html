@@ -1,6 +1,11 @@
 <mat-list>
-    <mat-list-item *ngFor="let task of tasks">
-        <mat-checkbox matListIcon></mat-checkbox>
+    <div class="no-tasks">
+        <ng-template class="no-tasks" [ngIf]="tasks.length == 0">
+            <h1>You don't have any tasks scheduled</h1>
+        </ng-template>
+    </div>
+    <mat-list-item *ngFor="let task of tasks" [ngClass]="{'isChecked':task.switch}">
+        <mat-checkbox matListIcon  (change)="task.switch =! task.switch"></mat-checkbox>
         <h1 matLine> {{task.title}} </h1>
         <p class="task-detail" matLine>Due Date:
             <span> {{task.dueDate | date}} </span>
@@ -11,5 +16,6 @@
         <button mat-icon-button><mat-icon [routerLink]="['/edit', task._id]" color="primary">edit</mat-icon></button>
         <button mat-icon-button><mat-icon (click)="removeTask(task._id)" color="accent">delete</mat-icon></button>
         <mat-divider></mat-divider>
+    <!-- </div> -->
     </mat-list-item>
 </mat-list>
