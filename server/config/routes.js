@@ -42,7 +42,15 @@ module.exports = (app) => {
         task.countImportant(req, res);
     })
 
-    app.get("/tasks/count/myday", (req, res) => task.countMyDay(req, res));
+    app.get("/tasks/count/myday", (req, res) => {
+        task.countMyDay(req, res)
+    });
 
-    app.get("/tasks/count/tasks", (req, res) => task.countTask(req, res));
+    app.get("/tasks/count/tasks", (req, res) => {
+        task.countTask(req, res)
+    });
+
+    app.put("/tasks/edit/complete/:id", (req, res) => { 
+        task.completion(req, res);
+    })
 }

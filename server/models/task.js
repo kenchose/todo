@@ -14,7 +14,11 @@ let TaskSchema = new mongoose.Schema({
         type:String
     },
     priLevel:{
-        type:String,
+        type:String
+    },
+    complete:{
+        type:Boolean,
+        default:false
     }
 }, {timestamps:{createdAt:"created_at"}});
 

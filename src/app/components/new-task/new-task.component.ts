@@ -35,11 +35,11 @@ export class NewTaskComponent implements OnInit {
   }
 
   getTasks(){
-    this._httpService.getAllTasks().subscribe(data => this.tasks = data['tasks']);
+    this._httpService.getAllTasks().subscribe(data => {this.tasks = data['tasks']});
   }
 
   createNewTask(){
-    this._httpService.createTask(this.newTask).subscribe(data => this._router.navigate(['/task']));
+    this._httpService.createTask(this.newTask).subscribe(data => {this._router.navigate(['/task'])});
   }
 
   

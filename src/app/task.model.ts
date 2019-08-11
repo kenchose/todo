@@ -3,4 +3,5 @@ export interface Task {
     note:string;
     dueDate:string,
     priLevel:string;
+    complete:boolean;
 }

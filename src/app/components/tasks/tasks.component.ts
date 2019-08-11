@@ -21,6 +21,7 @@ export class TasksComponent implements OnInit {
   countTasks:any;
   thisNewTask:boolean
   switch:boolean;
+  isChecked:any;
 
   constructor(
     private _httpService:HttpService,
@@ -36,12 +37,8 @@ export class TasksComponent implements OnInit {
     this.getTasks();
   }
   
-  keepClass(event){
-    console.log(event)
-    // this._httpService.keepingClass.subscribe((event) => this.switch = event)
-  }
   getTasks(){
-    this._httpService.getAllTasks().subscribe(data => {this.tasks = data['tasks']; console.log(this.tasks.length)});
+    this._httpService.getAllTasks().subscribe(data => this.tasks = data['tasks']);
   }
 
   getCountImportant(){
@@ -58,5 +55,11 @@ export class TasksComponent implements OnInit {
 
   removeTask(id){
     this._httpService.deleteTask(id).subscribe(() => this.getTasks());
+  }
+
+  onChange(task){
+    this.switch = task.complete;
+    console.log(this.switch, task.complete, task._id)
+    this._httpService.taskComplete(task).subscribe(() => this.getTasks())
   }
 }

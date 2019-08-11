@@ -11,7 +11,7 @@ ul li {
 ul li a {
   text-decoration: none;
   color: #fff;
-  padding: 20px;
+  padding: 5px 20px 20px;
   display: block;
   text-align: center;
 }
@@ -19,7 +19,6 @@ ul li a {
 ul li .activated {
   background-color: #696969;
   width: 80px;
-  border-radius: 50%;
 }
 
 mat-icon {

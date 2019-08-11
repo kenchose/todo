@@ -5,19 +5,18 @@
     }
     
 form {
-    // display: flex;
+    display: flex;
     flex-direction: column;
-    width:50%;
+    width:70%;
     margin:1rem auto;
 }
 
 mat-form-field {
     width:100%;
-    padding:0;
 }
 
 mat-card {
-    margin:3rem auto;
+    margin:0 auto;
     width:80%;
 }
 
@@ -33,5 +32,6 @@ button {
 
 .container {
     height:100%;
+    padding-top:3rem;
     background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
 }

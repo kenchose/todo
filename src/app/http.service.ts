@@ -77,4 +77,8 @@ export class HttpService {
   getTaskCount(){
     return this._http.get("/tasks/count/tasks");
   }
+
+  taskComplete(task:any){
+    return this._http.put("/tasks/edit/complete/"+task._id, task)
+  }
 }

@@ -9,7 +9,8 @@ h1 {
 }
   
 mat-list {
-    padding:0px;
+    padding:1rem;
+    border:10px solid black;
     height:100%;
     background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
 }

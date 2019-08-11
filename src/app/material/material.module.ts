@@ -20,7 +20,7 @@ import {
   MatCardModule,
   MatMenuModule, 
   MatListModule,
-  MatCheckboxModule
+  MatCheckboxModule,
 } from '@angular/material';
 
 const material = [
@@ -44,7 +44,7 @@ const material = [
   MatCardModule, 
   MatMenuModule, 
   MatListModule,
-  MatCheckboxModule
+  MatCheckboxModule,
 ]
 @NgModule({
   declarations: [],
