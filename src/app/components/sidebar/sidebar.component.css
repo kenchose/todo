@@ -42,4 +42,11 @@ nav {
   display: flex;
   position: fixed;
 }
+
+img {
+  height: 80px;
+  width: 80px;
+  padding: 25px 20px 0px;
+  margin-bottom: 20px;
+}
 /*# sourceMappingURL=sidebar.component.css.map */
