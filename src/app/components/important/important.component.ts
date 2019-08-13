@@ -11,6 +11,8 @@ export class ImportantComponent implements OnInit {
   importantTask: Object[] = [];
   countImport:any;
   countTasks:any;
+  switch:boolean;
+  isChecked:any;
 
   constructor(private _httpService: HttpService) {}
 
@@ -36,5 +38,10 @@ export class ImportantComponent implements OnInit {
 
   getCountTasks(){
     this._httpService.getTaskCount().subscribe(count => this.countTasks = count);
+  }
+  onChange(task){
+    this.switch = task.complete;
+    console.log(this.switch, task.complete, task._id)
+    this._httpService.taskComplete(task).subscribe(() => this.allImportantTasks())
   }
 }

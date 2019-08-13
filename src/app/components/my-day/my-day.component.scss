@@ -15,12 +15,18 @@ mat-list {
     background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
 }
 
-// mat-list-item {
-//     // margin:0.8rem !important;
-//     mat-divider {
-//       margin-bottom:-20px !important;
-//     }
-// }
+.isChecked {
+    opacity:0.4;
+    text-decoration:line-through;
+}
+  
+.no-tasks {
+    h1 {
+      margin:0;
+      padding:3rem;
+      text-align: center;
+    }
+}
 
 #text-title {
     margin-bottom:10px !important;

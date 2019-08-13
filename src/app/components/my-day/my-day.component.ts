@@ -12,6 +12,9 @@ export class MyDayComponent implements OnInit {
   minDate = new Date().toISOString().slice(0,10); //today's date
   countTasks:any;
   countMyDay:any;
+  isChecked:any;
+  switch:boolean;
+
 
   constructor(private _httpService:HttpService) { 
   }
@@ -42,5 +45,11 @@ export class MyDayComponent implements OnInit {
 
   getCountTasks(){
     this._httpService.getTaskCount().subscribe(count => this.countTasks = count);
+  }
+
+  onChange(task){
+    this.switch = task.complete;
+    console.log(this.switch, task.complete, task._id)
+    this._httpService.taskComplete(task).subscribe(() => this.myDayTasks())
   }
 }
