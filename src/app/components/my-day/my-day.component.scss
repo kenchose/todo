@@ -4,6 +4,10 @@
 flex: 1 1 auto;
 }
 
+#text-title {
+    margin-bottom:10px !important;
+}
+
 h1 {
     font-size:24px !important;
 }
@@ -26,8 +30,4 @@ mat-list {
       padding:3rem;
       text-align: center;
     }
-}
-
-#text-title {
-    margin-bottom:10px !important;
 }

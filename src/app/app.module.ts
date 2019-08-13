@@ -14,7 +14,6 @@ import { MyDayComponent } from './components/my-day/my-day.component';
 import { NewTaskComponent } from './components/new-task/new-task.component';
 import { ImportantComponent } from './components/important/important.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { EditComponent } from './components/edit/edit.component';
 
@@ -26,7 +25,6 @@ import { EditComponent } from './components/edit/edit.component';
     MyDayComponent,
     NewTaskComponent,
     ImportantComponent,
-    NavbarComponent,
     NotfoundComponent,
     EditComponent,
   ],

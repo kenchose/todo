@@ -23,11 +23,29 @@ module.exports = {
   },
 
   myDay: (req, res) => {
-    // let today = new Date().toISOString().slice(0,10) formats date readable
-    Task.find({priLevel:['myDay']}, (err, dayTasks) => {
-      if (err) {
+    Task.find({}, (err, tasks, dayTasks) => {
+      if(err) {
         res.json({error: "Error, couldn't find current day todo tasks", err});
       } else {
+        var dayTasks = []
+        var d = new Date();
+        var day = d.getDate().toString();
+        var month = d.getMonth();
+        if(month <= 11){
+          month+=1;
+        }
+        if(month < 10){
+          month = '0'+month
+        }
+        month.toString();
+        var year = d.getFullYear().toString();
+        var fulldate = year+'-'+month+'-'+day.toString()
+        for(let i = 0; i < tasks.length; i++){
+          let c = tasks[i].dueDate = tasks[i].dueDate.slice(0, 10)
+          if(tasks[i].dueDate == fulldate){
+            dayTasks.push(tasks[i]);
+          }
+        }
         res.json({success: "Found todays todo schedule", dayTasks});
       }
     })

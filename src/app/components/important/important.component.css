@@ -1,9 +1,9 @@
-h1 {
-  font-size: 24px !important;
+#text-title {
+  margin-bottom: 10px !important;
 }
 
-mat-radio-button {
-  margin-right: 16px;
+h1 {
+  font-size: 24px !important;
 }
 
 mat-list {
@@ -11,6 +11,10 @@ mat-list {
   border: 10px solid black;
   height: 100%;
   background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+}
+
+mat-radio-button {
+  margin-right: 16px;
 }
 
 .isChecked {
@@ -22,9 +26,5 @@ mat-list {
   margin: 0;
   padding: 3rem;
   text-align: center;
-}
-
-#text-title {
-  margin-bottom: 10px !important;
 }
 /*# sourceMappingURL=important.component.css.map */

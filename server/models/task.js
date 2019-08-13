@@ -7,8 +7,6 @@ let TaskSchema = new mongoose.Schema({
     },
     note:{
         type:String,
-        min:[5, "Must be at least 5 characters."],
-        required:[true, "Note is required field."]
     },
     dueDate:{
         type:String

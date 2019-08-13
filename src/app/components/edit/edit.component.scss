@@ -3,7 +3,12 @@
         Every toolbar row uses a flexbox row layout. */
         flex: 1 1 auto;
     }
-    
+.container {
+    height:100%;
+    padding-top:3rem;
+    background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+}  
+
 form {
     display: flex;
     flex-direction: column;
@@ -28,10 +33,4 @@ button {
 
 .action-btn {
     text-align: right;
-}
-
-.container {
-    height:100%;
-    padding-top:3rem;
-    background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
 }

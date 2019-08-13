@@ -1,3 +1,13 @@
+nav {
+  background-color: #2d2e2e;
+  height: 100%;
+  width: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -21,6 +31,13 @@ ul li .activated {
   width: 80px;
 }
 
+img {
+  height: 80px;
+  width: 80px;
+  padding: 25px 20px 0px;
+  margin-bottom: 20px;
+}
+
 mat-icon {
   font-size: 42px;
   color: #FB8C00;
@@ -31,22 +48,5 @@ mat-icon {
 
 .material-icon {
   top: -4px;
-}
-
-nav {
-  background-color: #2d2e2e;
-  height: 100%;
-  width: 120px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-}
-
-img {
-  height: 80px;
-  width: 80px;
-  padding: 25px 20px 0px;
-  margin-bottom: 20px;
 }
 /*# sourceMappingURL=sidebar.component.css.map */

@@ -7,7 +7,7 @@
     <ng-template class="yes-tasks" [ngIf]="tasks.length > 0">
         <mat-list-item *ngFor="let task of tasks" [ngClass]="{'isChecked':task.complete}">
             <mat-checkbox matListIcon [checked]="task.complete" (click)="onChange(task)"></mat-checkbox>
-            <h1 matLine> {{task.title}} </h1>
+            <h1 id='text-title' matLine> {{task.title}} </h1>
             <p class="task-detail" matLine>Due Date:
                 <span> {{task.dueDate | date}} </span>
             </p>

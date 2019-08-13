@@ -6,6 +6,13 @@
           flex: 1 1 auto;
 }
 
+.container {
+  height: 100%;
+  padding-top: 3rem;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#0c3483), color-stop(100%, #a2b6df), color-stop(100%, #6b8cce), to(#a2b6df));
+  background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+}
+
 form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,12 +46,5 @@ button {
 
 .action-btn {
   text-align: right;
-}
-
-.container {
-  height: 100%;
-  padding-top: 3rem;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#0c3483), color-stop(100%, #a2b6df), color-stop(100%, #6b8cce), to(#a2b6df));
-  background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
 }
 /*# sourceMappingURL=edit.component.css.map */
