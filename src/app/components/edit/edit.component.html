@@ -25,7 +25,6 @@
         <mat-form-field  color="warn" [hideRequiredMarker]="hideRequired">
             <mat-label>Category</mat-label>
             <mat-select [(ngModel)]="editTask.priLevel" name="editTask.priLevel"  required>
-                <mat-option value="myDay"> My Day</mat-option>
                 <mat-option value="important"> Important</mat-option>
                 <mat-option value="task"> Task</mat-option>
             </mat-select>
@@ -34,7 +33,7 @@
             Please choose a category
         </mat-error>
         <div class="action-btn">
-            <button mat-raised-button color="primary" [disabled]="formData.invalid">Edit task</button>
+            <button mat-raised-button color="primary" [disabled]="formData.invalid">Submit edit</button>
             <button mat-raised-button type="reset" color="warn" [routerLink]="['/task']">Cancel</button>
         </div>
     </form>

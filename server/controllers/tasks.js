@@ -28,12 +28,7 @@ module.exports = {
       if (err) {
         res.json({error: "Error, couldn't find current day todo tasks", err});
       } else {
-        // let now = new Date();
-        // let dayCheck = now.getDate();
-        // let monthCheck = now.getMonth();
-        // let yearCheck = now.getFullYear();
         res.json({success: "Found todays todo schedule", dayTasks});
-        // res.json({success: "Found todays todo schedule", dayTasks, dayCheck, monthCheck, yearCheck});
       }
     })
   },
@@ -74,7 +69,6 @@ module.exports = {
   oneTask: (req, res) => {
     let id = req.params.id
     Task.findOne({_id: id}, (err, task) => {
-      console.log(task.title)
         if(err) {
             res.json({error: "Error, error finding single task", err});
         } else {
@@ -116,10 +110,28 @@ module.exports = {
   },
 
   countMyDay: (req, res) => {
-    Task.find({priLevel:"myDay"}).countDocuments((err, count) => {
+    Task.find({}, (err, tasks, count) => {
       if(err) {
-        res.json({error: "Error, could not count my days"});
+        res.json({error: "Error, could not count all tasks"});
       } else {
+        var count = 0
+        var newDate = []
+        var d = new Date();
+        var dayCheck = d.getDate().toString();
+        var month = d.getMonth()+1;
+        var monthCheck = month.toString();
+        var yearCheck = d.getFullYear().toString();
+        var fullDate = yearCheck+"-0"+monthCheck+"-"+dayCheck.toString()
+        var dueDateTask = tasks.map(elem => elem.dueDate);
+        dueDateTask.forEach(elem => {
+          let sliced = elem.slice(0, 10)
+          newDate.push(sliced)
+        })
+        for( let i = 0; i < newDate.length; i++){
+          if(newDate[i].includes(fullDate)){
+            count++;
+          }
+        }
         res.json(count);
       }
     })
@@ -144,24 +156,11 @@ module.exports = {
       "priLevel":req.body.priLevel,
       "complete":!req.body.complete
     }
-    console.log(updateTask)
     Task.findByIdAndUpdate({_id:id}, updateTask, (err, task) => {
       if(err){
         res.json({error:"Error, could not find task", err});
       } else {
           res.json({success: "Success, switched property complete to true", task});
-      }
-    })
-  },
-
-  incomplete: (req, res) => {
-    let id = req.params.id
-    console.log("the only one", req.body)
-    Task.findByIdAndUpdate({_id:id}, {$set:{complete:true}}, (err, isDone) => {
-      if(err) {
-        res.json({error: "Error, could not update completion", err});
-      } else {
-        res.json({success: "Success, task is now completed", isDone});
       }
     })
   }

@@ -9,7 +9,7 @@ import { HttpService } from './../../http.service';
 export class MyDayComponent implements OnInit {
 
   dayTasks:Object[]=[];
-  minDate = new Date().toISOString().slice(0,10);
+  minDate = new Date().toISOString().slice(0,10); //today's date
   countTasks:any;
   countMyDay:any;
 
@@ -37,10 +37,10 @@ export class MyDayComponent implements OnInit {
   }
 
   getCountMyDay(){
-    let obs = this._httpService.getMyDayCount().subscribe(count => this.countMyDay = count);
+    this._httpService.getMyDayCount().subscribe(count => this.countMyDay = count);
   }
 
   getCountTasks(){
-    let obs = this._httpService.getTaskCount().subscribe(count => this.countTasks = count);
+    this._httpService.getTaskCount().subscribe(count => this.countTasks = count);
   }
 }
