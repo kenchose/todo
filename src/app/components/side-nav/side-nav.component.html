@@ -1,0 +1,86 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar><img src="./../../../favicon.png" alt="brand"/></mat-toolbar>
+    <mat-nav-list>
+      <ul>
+        <!-- <li>
+          <img src="./../../../favicon.png" alt="brand" />
+        </li> -->
+        <li>
+          <a [routerLink]="['create']" routerLinkActive="activated">
+            <p>
+              <mat-icon id="add">add</mat-icon>
+            </p>
+            <span id="new-task">New Task</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['myday']" routerLinkActive="activated">
+            <p>
+              <mat-icon
+                id="local-cafe"
+                class="material-icons"
+                matBadge="{{ countMyDay }}"
+                matBadgeColor="warn"
+                >local_cafe</mat-icon
+              >
+            </p>
+            <span matLine>My Day {{ user }}</span>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['important']" routerLinkActive="activated">
+            <p>
+              <mat-icon
+                id="star-border"
+                class="material-icons"
+                matBadge="{{ countImport }}"
+                matBadgeColor="warn"
+                >star_border</mat-icon
+              >
+            </p>
+            <span class="import">Important</span>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['task']" routerLinkActive="activated">
+            <p>
+              <mat-icon
+                id="list-alt"
+                class="material-icons"
+                matBadge="{{ countTasks }}"
+                matBadgeColor="warn"
+                matBadgeOverlap="true"
+                >list_alt</mat-icon
+              >
+            </p>
+            <span>Tasks</span>
+          </a>
+        </li>
+      </ul>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar *ngIf="isHandset$ | async" id="top-toolbar">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -16,6 +16,8 @@ import { ImportantComponent } from './components/important/important.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { EditComponent } from './components/edit/edit.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { EditComponent } from './components/edit/edit.component';
     ImportantComponent,
     NotfoundComponent,
     EditComponent,
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,11 @@ import { EditComponent } from './components/edit/edit.component';
     FormsModule,
     ReactiveFormsModule,
     LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
