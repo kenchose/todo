@@ -1,5 +1,5 @@
 .example-fill-remaining-space {
-  /* This fills the remaining space, by using flexbox. 
+  /* This fills the remaining space, by using flexbox.
     Every toolbar row uses a flexbox row layout. */
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -39,5 +39,13 @@ button {
 
 .action-btn {
   text-align: right;
+}
+
+@media (max-width: 640px) {
+  .action-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 /*# sourceMappingURL=new-task.component.css.map */

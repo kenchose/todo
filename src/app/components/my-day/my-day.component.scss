@@ -1,33 +1,33 @@
 .example-fill-remaining-space {
-/* This fills the remaining space, by using flexbox. 
-    Every toolbar row uses a flexbox row layout. */
-flex: 1 1 auto;
+  /* This fills the remaining space, by using flexbox. 
+      Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
 }
 
 #text-title {
-    margin-bottom:10px !important;
+  margin-bottom: 10px !important;
 }
 
 h1 {
-    font-size:24px !important;
+  font-size: 24px !important;
 }
-  
+
 mat-list {
-    padding:1rem;
-    border:10px solid black;
-    height:100%;
-    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+  padding: 1rem 1rem 0;
+  border: 2px solid black;
+  height: 100%;
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
 }
 
 .isChecked {
-    opacity:0.4;
-    text-decoration:line-through;
+  opacity: 0.4;
+  text-decoration: line-through;
 }
-  
+
 .no-tasks {
-    h1 {
-      margin:0;
-      padding:3rem;
-      text-align: center;
-    }
+  h1 {
+    margin: 0;
+    padding: 3rem;
+    text-align: center;
+  }
 }

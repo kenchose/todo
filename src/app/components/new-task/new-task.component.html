@@ -1,39 +1,81 @@
 <mat-card>
-    <form (submit)='createNewTask(formData)' #formData='ngForm'>        
-        <mat-form-field [hideRequiredMarker]="hideRequired">
-            <input matInput placeholder="Title" [(ngModel)]='newTask.title' name='newTask.title' #title="ngModel" required>
-        </mat-form-field>
-        <mat-error *ngIf="title.invalid && title.touched">
-            Please enter a taslk title
-        </mat-error>
+  <form (submit)="createNewTask(formData)" #formData="ngForm">
+    <mat-form-field [hideRequiredMarker]="hideRequired">
+      <input
+        matInput
+        placeholder="Title"
+        [(ngModel)]="newTask.title"
+        name="newTask.title"
+        #title="ngModel"
+        required
+      />
+    </mat-form-field>
+    <mat-error *ngIf="title.invalid && title.touched">
+      Please enter a taslk title
+    </mat-error>
 
-        <mat-form-field>
-            <textarea matInput placeholder="Note" [(ngModel)]="newTask.note" name="newTask.note"></textarea>
-        </mat-form-field>
-        
-        <mat-form-field [hideRequiredMarker]="hideRequired"> 
-            <input matInput [matDatepicker]="myDatePicker" [min]="minDate" [(ngModel)]="newTask.dueDate" name="newTask.dueDate" placeholder="Due Date" #dueDate="ngModel" required>
-            <mat-datepicker-toggle  matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
-            <mat-datepicker touchUi #myDatePicker></mat-datepicker>
-        </mat-form-field>
-        <mat-error *ngIf="dueDate.invalid && dueDate.touched">
-            Please enter a due date
-        </mat-error>
-        
-        
-        <mat-form-field  color="warn" [hideRequiredMarker]="hideRequired">
-            <mat-label>Category</mat-label>
-            <mat-select [(ngModel)]="newTask.priLevel" name="newTask.priLevel" required>
-                <mat-option value="important">Important</mat-option>
-                <mat-option value="task">Task</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-error *ngIf="dueDate.invalid && dueDate.touched">
-            Please choose a category
-        </mat-error>
-        <div class="action-btn">
-            <button mat-raised-button color="primary" [disabled]="formData.invalid">Create new task</button>
-            <button mat-raised-button type="reset" color="accent" (click)="resetForm(formData)">Clear</button>
-        </div>
-    </form>
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Note"
+        [(ngModel)]="newTask.note"
+        name="newTask.note"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field [hideRequiredMarker]="hideRequired">
+      <input
+        matInput
+        [matDatepicker]="myDatePicker"
+        [min]="minDate"
+        [(ngModel)]="newTask.dueDate"
+        name="newTask.dueDate"
+        placeholder="Due Date"
+        #dueDate="ngModel"
+        required
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="myDatePicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker touchUi #myDatePicker></mat-datepicker>
+    </mat-form-field>
+    <mat-error *ngIf="dueDate.invalid && dueDate.touched">
+      Please enter a due date
+    </mat-error>
+
+    <mat-form-field color="warn" [hideRequiredMarker]="hideRequired">
+      <mat-label>Category</mat-label>
+      <mat-select
+        [(ngModel)]="newTask.priLevel"
+        name="newTask.priLevel"
+        required
+      >
+        <mat-option value="important">Important</mat-option>
+        <mat-option value="task">Task</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-error *ngIf="dueDate.invalid && dueDate.touched">
+      Please choose a category
+    </mat-error>
+    <div class="action-btn">
+      <button
+        mat-raised-button
+        inline="true"
+        color="primary"
+        [disabled]="formData.invalid"
+      >
+        Create new task
+      </button>
+      <button
+        mat-raised-button
+        inline="true"
+        type="reset"
+        color="accent"
+        (click)="resetForm(formData)"
+      >
+        Clear
+      </button>
+    </div>
+  </form>
 </mat-card>

@@ -1,31 +1,47 @@
+// Mobile portait (320px to 414px)
+// Mobile landscape (568px to 812px)
+// Tablet portait (768px to 834px)
+// Tablet landscape (1024px to 1112px)
+// Laptop & desktop displays (1200px+)
+$bp-phone: 640px;
+$bp-tablet-portrait: 768px;
+$bp-tablet-ls: 992px;
+$bp-desktop: 1024px;
+
 .example-fill-remaining-space {
-/* This fills the remaining space, by using flexbox. 
+  /* This fills the remaining space, by using flexbox.
     Every toolbar row uses a flexbox row layout. */
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 form {
-    flex-direction: column;
-    width:70%;
-    margin:1rem auto;
-    display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 1rem auto;
+  display: flex;
 }
 
 mat-card {
-    margin:3rem auto;
-    width:80%;
+  margin: 3rem auto;
+  width: 80%;
 }
 
 mat-form-field {
-    width:100%;
+  width: 100%;
 }
 
 button {
-    justify-content: right;
-    margin-left:10px;
-    display:inline-flex;
+  justify-content: right;
+  margin-left: 10px;
+  display: inline-flex;
 }
 
 .action-btn {
-    text-align: right;
+  text-align: right;
+}
+
+@media (max-width: $bp-phone) {
+  .action-btn {
+    display: flex;
+  }
 }

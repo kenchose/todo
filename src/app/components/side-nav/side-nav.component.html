@@ -10,9 +10,6 @@
     <mat-toolbar><img src="./../../../favicon.png" alt="brand"/></mat-toolbar>
     <mat-nav-list>
       <ul>
-        <!-- <li>
-          <img src="./../../../favicon.png" alt="brand" />
-        </li> -->
         <li>
           <a [routerLink]="['create']" routerLinkActive="activated">
             <p>
@@ -78,7 +75,7 @@
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async"
       >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon id="brand" aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
     </mat-toolbar>
     <ng-content></ng-content>

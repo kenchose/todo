@@ -1,6 +1,6 @@
 .example-fill-remaining-space {
   /* This fills the remaining space, by using flexbox. 
-    Every toolbar row uses a flexbox row layout. */
+      Every toolbar row uses a flexbox row layout. */
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -15,8 +15,8 @@ h1 {
 }
 
 mat-list {
-  padding: 1rem;
-  border: 10px solid black;
+  padding: 1rem 1rem 0;
+  border: 2px solid black;
   height: 100%;
   background-image: -webkit-gradient(linear, left bottom, left top, from(#fddb92), to(#d1fdff));
   background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
