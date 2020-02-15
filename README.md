@@ -1,27 +1,33 @@
-# Todo
+# Tickets
+
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Prerequisites](#prerequisites)
+* [Setup](#setup)
+* [Build](#build)
+
+## General info
+A todo-list to keep your tasks in order to make your life easier. Create a task and rank its priorities from general to important, a due date, notes for extra reminders, and mark it as "done" when you're finished.
+
+## Technologies
+* Express version: 4.17.1
+* Path version: 0.12.7
+* Mongoose version: 5.9.1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Prerequisites
+* Nodemon version: 1.19.2
+* Body-parser version: 1.19.0
+* Angular Material(If running Angular version >= 6)
+  > ng @angular/material
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Setup
+ng new `project name`
+Run `nodemon server.js` for a dev server. Navigate to `http://localhost:8000/`. The app will automatically reload if you change any of the source files.
 
 ## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `ng build --watch` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
