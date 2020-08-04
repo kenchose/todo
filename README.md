@@ -5,7 +5,6 @@
 * [Technologies](#technologies)
 * [Prerequisites](#prerequisites)
 * [Setup](#setup)
-* [Build](#build)
 
 ## General info
 A todo-list to keep your tasks in order to make your life easier. Create a task and rank its priorities from general to important, a due date, notes for extra reminders, and mark it as "done" when you're finished.
@@ -26,8 +25,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   > ng @angular/material
 
 ## Setup
-ng new `project name`
 Run `nodemon server.js` for a dev server. Navigate to `http://localhost:8000/`. The app will automatically reload if you change any of the source files.
-
-## Build
-Run `ng build --watch` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
